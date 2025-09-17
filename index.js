@@ -15,10 +15,21 @@ function handleAddKeyword() {
     }
     keywordList.add(keyword);
 
-    const node = document.createElement("div");
-    node.textContent = keyword;
-    node.className = "keyword";
-    keywordContainer.appendChild(node);
+    const keywordNode = document.createElement("div");
+    keywordNode.textContent = keyword;
+    keywordNode.className = "keyword";
+    keywordContainer.appendChild(keywordNode);
+
+    const delButtonNode = document.createElement("input");
+    delButtonNode.value = "Delete";
+    delButtonNode.className = "del-button";
+    delButtonNode.type = "button"
+    keywordContainer.appendChild(delButtonNode);
+    delButtonNode.addEventListener("click", function () {
+        keywordList.delete(keyword);
+        keywordNode.remove();
+        delButtonNode.remove();
+    }, { once: true });
 
     addKeywordTextbox.value = null;
     addKeywordTextbox.focus();
@@ -33,7 +44,9 @@ addKeywordTextbox.addEventListener("input", function () {
         addKeywordButton.setAttribute("disabled", "true");
         return;
     }
-    addKeywordContainer.querySelectorAll("div.error").forEach(n => n.remove());
+    addKeywordContainer
+        .querySelectorAll("div.error")
+        .forEach((n) => n.remove());
 
     if (keywordList.has(keyword)) {
         addKeywordButton.setAttribute("disabled", "true");
@@ -55,8 +68,8 @@ addKeywordTextbox.addEventListener("keydown", function (e) {
         return;
     }
     handleAddKeyword();
-})
+});
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     addKeywordTextbox.focus();
-})
+});
