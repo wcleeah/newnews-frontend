@@ -9,6 +9,14 @@ The frontend of my US stock news aggregator
 - Use the search keyword to construct categories and concepts
 - Get all the news by keywords, categories and concepts, display them accordingly
 
+## Goal
+- [ ] Deeper understanding on vanilla JS (No Packages, tho i might use bun to serve TBC)
+  - [ ] JS in Browser
+  - [ ] Deploy the pages securely
+- [ ] Learn JSDoc
+- [ ] No Build JS
+- [ ] Deeper understanding on CSS (Again, no tailwind or preprocessor, pure css)
+
 ## TODO
 - [ ] Add Keyword Page (Homepage)
   - [x] Allow user to add a keyword
@@ -25,11 +33,3 @@ The frontend of my US stock news aggregator
   - [ ] Pick a font
   - [ ] Icons
   - [ ] Color
-
-## Non Product Targets
-- [ ] Deeper understanding on vanilla JS (No Packages, tho i might use bun to serve TBC)
-  - [ ] JS in Browser
-  - [ ] Deploy the pages securely
-- [ ] Learn JSDoc
-- [ ] No Build JS
-- [ ] Deeper understanding on CSS (Again, no tailwind or preprocessor, pure css)
